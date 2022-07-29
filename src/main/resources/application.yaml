@@ -1,0 +1,35 @@
+spring:
+  banner:
+    location: classpath:/banner.txt
+#Disable timestamp in date
+  jackson:
+    date-format: yyyy-MM-dd
+    timestamp-format: yyyy-MM-dd HH:mm:ss
+    serialization:
+      write-dates-as-timestamps: false
+
+# /api-docs endpoint custom path
+#springdoc:
+#  api-docs:
+#    path: /api-docs
+#  swagger-ui:
+#    path: /swagger-ui-custom.html
+#
+#app:
+#  api:
+#    swagger:
+#      enable: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+info:
+  application:
+    name: ${spring.application.name}
+    description: Very cool Spring Boot application
+    version: '@project.version@'
+    spring-cloud-version: '@spring-cloud.version@'
+    #spring-boot-version: '@project.parent.version@'s
